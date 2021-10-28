@@ -1,0 +1,98 @@
+
+<!doctype html>
+<html>
+  <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+      <title>Pokedex</title>
+      <link rel="stylesheet" href="styles.css" />
+      <link  rel="icon"   href="https://www.downloadclipart.net/medium/pokeball-png-photos.png" type="image/png" />
+  </head>
+  <body>
+      <nav class="navbar navbar-light bg-light">
+          <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+              <img src="https://www.downloadclipart.net/medium/pokeball-png-photos.png" alt="" width="30" height="24" class="d-inline-block align-text-top">
+              Pokedex
+            </a>
+          </div>
+      </nav>
+      <section class="py-5 text-center container">
+          <div class="row py-lg-5">
+            <div class="col-lg-6 col-md-8 mx-auto">
+              <h1 class="fw-light">Buscar Pokémon</h1>
+              <p class="lead text-muted">La busqueda se realiza por nombre de Pokemon</p>
+              <input class="form-control form-control-lg" type="text" id="itemBuscar" onkeyup="buscarAutomatico()">
+              <p>
+                <button type="button" class="btn btn-primary" onclick='buscar()'>Buscar</button>
+                <button type="button" class="btn btn-secondary my-2" onclick='limpiar()'>Limpiar</button>
+              </p>
+            </div>
+          </div>
+      </section>
+      <div class="album py-5 bg-light">
+          <div class='container'>
+              <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-6 g-3" id='album'>
+              </div>
+          </div>
+      </div>
+      <!-- Modal -->
+      <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" style="min-width: 900px;">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Detalle Pokemon</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <div class="container px-4" id="featured-3">
+                <div class="row g-4 row-cols-1 row-cols-lg-3">
+                  <div class="feature col">
+                    <div class="feature-icon">
+                      <img class="card-img-top" id="modImagen">
+                    </div>
+                    <span>Nombre:</span>
+                    <h5 id="modNombre">Nombre Pokemon</h5>
+                    <span>Tipo(s):</span>
+                    <p class="text-muted" id="modTipo">Tipo</p>
+                  </div>
+                  <div class="feature col">
+                    <div>
+                      <p class="h6">Generales</p>
+                      <p class="item"><span class="h6">Id :</span> <small id="modGenId"></small></p>
+                      <p class="item"><span class="h6">Altura :</span> <small id="modGenAltura"></small></p>
+                      <p class="item"><span class="h6">Peso :</span> <small id="modGenPeso"></small></p>
+                    </div>
+                    <br>
+                    <div>
+                      <p class="h6">Estadísticas</p>
+                      <p class="item">HP: <small id="modEstHP"></small></p>
+                      <p class="item">Ataque: <small id="modEstAtaque"></small></p>
+                      <p class="item">Defensa: <small id="modEstDefensa"></small></p>
+                      <p class="item">Ataque especial: <small id="modEstAtaqueEspecial"></small></p>
+                      <p class="item">Defensa especial: <small id="modEstDefensaEspecial"></small></p>
+                      <p class="item">Velocidad: <small id="modEstVelocidad"></small></p>
+                    </div>
+                  </div>
+                  <div class="feature col">
+                    <p class="h6">Movimientos</p>
+                    <p id="modMovimientos"></p>
+                    <ul class="list-group" id="modListaMoves" style="list-style: none;"></ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+          integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
+          crossorigin="anonymous"></script>
+      <script src='index.js'></script>
+  </body>
+</html>
