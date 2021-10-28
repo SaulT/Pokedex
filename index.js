@@ -33,7 +33,7 @@ async function getPokemons_1stGen(nro) {
 };
 
 
-getPokemons_1stGen(50)
+getPokemons_1stGen(151)
 function buscarAutomatico(){
     buscar()
 }
